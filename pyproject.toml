@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "lexmod"
-version = "0.1.0"
+version = "1.0.0"
 description = "Modal lexing for Python: regex tokenizers whose rules can switch grammars as the input changes."
 readme = "README.md"
 license = "MIT"
