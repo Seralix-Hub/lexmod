@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lexmod"
+version = "0.1.0"
+description = "Modal lexing for Python: regex tokenizers whose rules can switch grammars as the input changes."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Seralix-Hub" }]
+requires-python = ">=3.15"
+dependencies = [
+    "regex>=2024.11.6",
+]
+keywords = ["lexer", "tokenizer", "lexing", "regex", "parsing", "grammar", "modes"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.15",
+    "Topic :: Software Development :: Compilers",
+    "Topic :: Software Development :: Interpreters",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+# rich isn't needed to use lexmod: tokens and patterns just render nicely with it.
+# The examples use it for their output.
+rich = ["rich>=13"]
+dev = ["pytest>=8", "rich>=13"]
+
+[project.urls]
+Homepage = "https://github.com/Seralix-Hub/lexmod"
+Source = "https://github.com/Seralix-Hub/lexmod"
+Issues = "https://github.com/Seralix-Hub/lexmod/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lexmod"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/lexmod", "tests", "examples", "README.md", "LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
