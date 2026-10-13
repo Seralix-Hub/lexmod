@@ -20,6 +20,10 @@ from .grammar import Grammar
 from .token import Token
 from .tokenizer import Tokenizer
 
+__title__ = "lexmod"
+__author__ = "影皇領臣"  # Eikō Reishin
+__version__ = "1.0.0"
+
 
 class Lexer[Type: Enum, AnyStr: (str, bytes)](Grammar[Type, AnyStr]):
     """
